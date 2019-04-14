@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start:dev": "concurrently \"node src/index.js\"",
+    "test": "nyc ava"
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "graphql-yoga": "^1.17.4",
+    "mongoose": "^5.5.1"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "nyc": "^13.3.0",
+    "sinon": "^7.3.1"
+  }
+}
