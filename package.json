@@ -2,7 +2,7 @@
   "scripts": {
     "start:dev": "concurrently \"node src/index.js\"",
     "test:local": "nyc ava",
-    "test": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test": "npm run test:local | coveralls"
   },
   "dependencies": {
     "concurrently": "^4.1.0",
