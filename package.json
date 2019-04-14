@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start:dev": "concurrently \"node src/index.js\"",
-    "test": "nyc ava"
+    "test:local": "nyc ava",
+    "test": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "concurrently": "^4.1.0",
@@ -10,6 +11,7 @@
   },
   "devDependencies": {
     "ava": "^1.4.1",
+    "coveralls": "^3.0.3",
     "nyc": "^13.3.0",
     "sinon": "^7.3.1"
   }
