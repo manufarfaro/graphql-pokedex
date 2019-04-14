@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start:dev": "concurrently \"node src/index.js\"",
+    "start": "node src/index.js",
+    "start:dev": "concurrently \"npm start\"",
     "test:local": "nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "npm run test:local && npm run coveralls"
