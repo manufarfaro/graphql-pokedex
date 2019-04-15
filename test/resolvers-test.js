@@ -25,7 +25,7 @@ const pokemonsMock = [{
   types: [],
   artwork: ''
 }]
-stub(mocks, 'pokemons').callsFake(() => typesMock)
+stub(mocks, 'pokemons').callsFake(() => pokemonsMock)
 
 test('info resolver should return an string', t => {
   const { Query: { info }} = resolvers

@@ -1,10 +1,11 @@
 const { GraphQLServer } = require('graphql-yoga')
 
 const resolvers = require('./resolvers')
-const typeDefs = require('./typeDefs')
+
+const schemaUrl = './src/schema.graphql'
 
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: schemaUrl,
   resolvers
 })
 

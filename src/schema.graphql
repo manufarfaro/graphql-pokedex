@@ -1,18 +1,26 @@
-const typeDefs =`
-  type Query {
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
     info: String!
     type: [Type!]!
     pokemon: [Pokemon!]!
-  }
+}
 
-  type Type {
+type Mutation {
+    createType(name: String!): Type!
+}
+
+type Type {
     name: String!
     strongWith: [Type!]!
     weakWith: [Type!]!
     pokemon: [Pokemon!]!
-  }
-  
-  type Pokemon {
+}
+
+type Pokemon {
     nationalNumber: Int
     name: String!
     height: Float
@@ -24,7 +32,4 @@ const typeDefs =`
     artwork: String
     previousEvolutions: [Pokemon!]!
     nextEvolutions: [Pokemon!]!
-  }
-`
-
-module.exports = typeDefs
+}

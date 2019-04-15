@@ -1,11 +1,25 @@
 const { types, pokemons } = require('./mocks')
 
 
+const createType = (parent, { name }) => {
+  const nextId = types.length
+  const newType = {
+    id: nextId,
+    name
+  }
+
+  types.push(newType)
+  return newType
+}
+
 const resolvers = {
   Query: {
     info: () => 'This is a dummy query',
     type: () => types,
     pokemon: () => pokemons
+  },
+  Mutation: {
+    createType
   },
   Type: {
     name: parent => parent.name,
