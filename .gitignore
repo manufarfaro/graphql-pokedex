@@ -63,3 +63,6 @@ typings/
 # IDE specific folders
 .idea/
 .vscode/
+
+# Prisma related folders
+generated/

@@ -1,0 +1,29 @@
+type User {
+  id: ID! @unique
+  name: String!
+}
+
+type Type {
+  id: ID! @unique
+  createdAt: DateTime!
+  name: String! @unique
+  strongWith: [Type!]! @relation(name: "StrongWithByTypes")
+  weakWith: [Type!]! @relation(name: "WeakWithByTypes")
+  pokemons: [Pokemon!]! @relation(name: "PokemonByTypes")
+}
+
+type Pokemon {
+  id: ID! @unique
+  nationalNumber: Int! @unique
+  createdAt: DateTime!
+  name: String! @unique
+  height: Float
+  weight: Float
+  hp: Int
+  attack: Int
+  defense: Int
+  type: [Type!]! @relation(name: "PokemonByTypes")
+  artwork: String
+  previousEvolutions: [Pokemon!]! @relation(name: "PreviousEvolutionsByPokemon")
+  nextEvolutions: [Pokemon!]! @relation(name: "NextEvolutionsByPokemon")
+}
