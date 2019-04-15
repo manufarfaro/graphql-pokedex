@@ -1,3 +1,5 @@
+# import * from "./generated/prisma.graphql"
+
 schema {
     query: Query
     mutation: Mutation
@@ -5,12 +7,29 @@ schema {
 
 type Query {
     info: String!
-    type: [Type!]!
-    pokemon: [Pokemon!]!
+    type(where: TypeWhereInput): [Type!]!
+    pokemon(where: PokemonWhereInput): [Pokemon!]!
 }
 
 type Mutation {
-    createType(name: String!): Type!
+    createType(
+        name: String!
+        strongWith: TypeCreateManyWithoutStrongWithInput # [Type!]!
+        weakWith: TypeCreateManyWithoutWeakWithInput # [Type!]!
+    ): Type!
+    createPokemon(
+        nationalNumber: Int
+        name: String!
+        height: Float
+        weight: Float
+        hp: Int
+        attack: Int
+        defense: Int
+        type: TypeCreateManyWithoutPokemonsInput # [Type!]!
+        artwork: String
+        previousEvolutions: PokemonCreateManyWithoutPreviousEvolutionsInput # [Pokemon!]!
+        nextEvolutions: PokemonCreateManyWithoutNextEvolutionsInput # [Pokemon!]!
+    ): Pokemon!
 }
 
 type Type {
