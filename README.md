@@ -1,5 +1,5 @@
 # graphql-pokedex
 
-A simple (very simple) pokedex API done with graphql
+[![Node.js CI](https://github.com/manufarfaro/graphql-pokedex/actions/workflows/node.js.yml/badge.svg)](https://github.com/manufarfaro/graphql-pokedex/actions/workflows/node.js.yml)
 
-[![Build Status](https://travis-ci.org/manufarfaro/graphql-pokedex.svg?branch=master)](https://travis-ci.org/manufarfaro/graphql-pokedex)
+A simple (very simple) pokedex API done with graphql.
